@@ -25,7 +25,10 @@ export default function App() {
           shadows
           camera={{
             position: [1, 1, 1],
-            near: 0.01,
+            frustum: {
+              near: 0.01,
+              far: 100,
+            },
           }}
         >
           <Scene />

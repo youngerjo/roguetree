@@ -63,10 +63,10 @@ export default function Scene() {
             temporal
             frames={100}
             color="black"
-            colorBlend={2}
+            colorBlend={1}
             toneMapped
             alphaTest={0.9}
-            opacity={2}
+            opacity={1}
             scale={100}
           >
             {/* @ts-ignore */}

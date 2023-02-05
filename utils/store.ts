@@ -245,9 +245,9 @@ export const useBearStore = create<BearState>()((set) => ({
       let newHealth = health;
 
       if (sunlight > 90) {
-        newHealth -= deltaTime * (2 - stats.heatResistance * 0.02);
+        newHealth -= deltaTime * (4 - stats.heatResistance * 0.02);
       } else if (sunlight > 80) {
-        newHealth -= deltaTime * (1 - stats.heatResistance * 0.01);
+        newHealth -= deltaTime * (2 - stats.heatResistance * 0.01);
       }
 
       if (water < 1) {

@@ -27,7 +27,7 @@
     {
       "name": "rainy",
       "modifiers": {
-        "health": -0.5,
+        "health": -1,
         "sunlight": -1,
         "water": 2,
         "nutrition": -0.2
@@ -36,7 +36,7 @@
     {
       "name": "stormy",
       "modifiers": {
-        "health": -1,
+        "health": -3,
         "sunlight": -1,
         "water": 3,
         "nutrition": -1
@@ -45,7 +45,7 @@
     {
       "name": "snowy",
       "modifiers": {
-        "health": -2,
+        "health": -5,
         "sunlight": -0.5,
         "water": 0.5,
         "nutrition": 0.5
