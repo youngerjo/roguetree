@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "type": "root",
+      "name": "root-levels",
+      "title": "Waterpump",
+      "description": "Increase water absorption efficiency.",
+      "modifiers": {
+        "stats.waterAbsorptionEfficiency": 5,
+        "stats.nutritionReachability": 2,
+        "stats.windResistance": 10,
+        "root.levels": 1
+      }
+    },
+    {
+      "type": "root",
+      "name": "child-root",
+      "title": "Child Root",
+      "description": "Make the first child root longer.",
+      "modifiers": {
+        "stats.waterAbsorptionArea": 5,
+        "stats.nutritionReachability": 5,
+        "stats.windResistance": -2,
+        "root.initalBranchLength": 0.1,
+        "root.lengthFalloffFactor": 0.1
+      }
+    },
+    {
+      "type": "root",
+      "name": "deeper-deeper",
+      "title": "Deeper, Deeper",
+      "description": "Grow roots to find more water and nutritions.",
+      "modifiers": {
+        "stats.waterAbsorptionArea": 2,
+        "stats.nutritionReachability": 10,
+        "stats.windResistance": -5,
+        "root.climbRate": 0.1,
+        "root.treeSteps": 0.5
+      }
+    }
+  ]
+}

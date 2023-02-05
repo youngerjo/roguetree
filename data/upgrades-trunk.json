@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "type": "trunk",
+      "name": "thick-trunk",
+      "title": "Thick Trunk",
+      "description": "Increase durability and water absorption",
+      "modifiers": {
+        "stats.durability": 10,
+        "stats.waterAbsorptionEfficiency": 10,
+        "tree.maxRadius": 0.02,
+        "root.maxRadius": 0.02
+      }
+    },
+    {
+      "type": "trunk",
+      "name": "long-trunk",
+      "title": "Long Trunk",
+      "description": "Resist flood, heat and herbivores.",
+      "modifiers": {
+        "stats.floodingResistance": 10,
+        "stats.heatResistance": 5,
+        "tree.trunkLength": 0.2
+      }
+    },
+    {
+      "type": "trunk",
+      "name": "higher-higher",
+      "title": "Higher, Higher",
+      "description": "More sunlight, but requires strong water absorbing power.",
+      "modifiers": {
+        "stats.photosynthesisArea": 5,
+        "stats.windResistance": -2,
+        "stats.waterAbsorptionEfficiency": -2,
+        "tree.climbRate": 0.2,
+        "tree.treeSteps": 1
+      }
+    }
+  ]
+}

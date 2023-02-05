@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "type": "branch",
+      "name": "branch-photosynthesis",
+      "title": "Photosynthesis",
+      "description": "Spare more rooms for leaves.",
+      "modifiers": {
+        "stats.photosynthesisArea": 5,
+        "tree.levels": 1
+      }
+    },
+    {
+      "type": "branch",
+      "name": "first-branch-length",
+      "title": "The First Branch",
+      "description": "Make the first branch longer.",
+      "modifiers": {
+        "stats.durability": 5,
+        "stats.windResistance": 5,
+        "tree.initalBranchLength": 0.1
+      }
+    },
+    {
+      "type": "branch",
+      "name": "branch-expansion",
+      "title": "Expanding Branch",
+      "description": "Grow branches. Essential for efficient sunlight absorption.",
+      "modifiers": {
+        "stats.photosynthesisArea": 5,
+        "tree.lengthFalloffFactor": 0.1
+      }
+    },
+    {
+      "type": "branch",
+      "name": "grow-twigs",
+      "title": "Grow Twigs",
+      "description": "Grow twigs to receive more sunlights.",
+      "modifiers": {
+        "stats.photosynthesisArea": 10,
+        "stats.nutritionDigestEfficiency": -2,
+        "stats.windResistance": -5,
+        "tree.twigScale": 0.05
+      }
+    }
+  ]
+}
