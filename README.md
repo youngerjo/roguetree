@@ -1,25 +1,31 @@
-# React Three Fiber Example
+# Rogue Tree
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+Global Game Jam 2023 Project
 
-Create Three.js projects using React components and props!
+## Installation
 
-## 🚀 How to use
+```
+$ yarn
+```
 
-> `npx create-react-native-app my-app -t with-react-three-fiber`
+## Run
 
-- Run `yarn` or `npm install`
-- Run `yarn start` or `npm run start` to try it out.
+```
+$ yarn web
+```
 
-## 📝 Notes
+## Concept
 
-- [react-three-fiber docs](https://github.com/react-spring/react-three-fiber)
-- [three.js docs](https://threejs.org/docs/)
-- [expo-three docs](https://github.com/expo/expo-three)
+This is a game about a little lone tree, rooted on the ground where nothing is around. The tree is very weak and vulnerable to the harsh weather and conditions like sunlight, water and nutritions. Please help the pity plant survive.
+
+## How to Play
+
+This is a simple rogue-lite game playable on Web browser. You will be given 3 upgrades when the tree levels up. Select proper upgrades to survive longer. Good luck!
+
+## Dependency
+
+[proctree.js](https://github.com/supereggbert/proctree.js)
+
+## License
+
+MIT License
