@@ -15,9 +15,20 @@ import Ground from "./Ground";
 import { useBearStore } from "../utils/store";
 
 export default function Scene() {
-  const { backgroundColor } = useControls("Scene", {
-    backgroundColor: "#d8efec",
-  });
+  const environment = useBearStore((state) => state.environment);
+  const backgroundColor = environment.skyColor ?? "#d8efec";
+  const ambientLight = environment.ambientLight ?? {
+    color: "#000000",
+  };
+  const directionalLight = environment.directionalLight ?? {
+    color: "#ffffff",
+    position: [1, 1, 2],
+  };
+  const shadow = environment.shadow ?? { color: "black", intensity: 1 };
+
+  // const { backgroundColor } = useControls("Scene", {
+  //   backgroundColor: environment.skyColor ?? "#d8efec",
+  // });
 
   const treeProps = useBearStore((state) => state.treeProps);
   const rootProps = useBearStore((state) => state.rootProps);
@@ -43,7 +54,7 @@ export default function Scene() {
         minPolarAngle={Math.PI * 0.25}
         maxPolarAngle={Math.PI * 0.75}
         enableDamping
-        // enablePan={false}
+        enablePan={false}
         onChange={({ target }) => {
           if (target.object.position.y > 0) {
             setBloomIntensity(maxBloomIntensity);
@@ -54,7 +65,11 @@ export default function Scene() {
       />
 
       <Suspense fallback={null}>
-        <directionalLight position={[5, 5, 10]} />
+        <ambientLight color={ambientLight.color} />
+        <directionalLight
+          color={directionalLight.color}
+          position={directionalLight.position}
+        />
         <Ground />
         <group>
           <Tree tree={treeProps} root={rootProps} />
@@ -62,7 +77,7 @@ export default function Scene() {
           <AccumulativeShadows
             temporal
             frames={100}
-            color="black"
+            color={shadow.color}
             colorBlend={1}
             toneMapped
             alphaTest={0.9}
@@ -74,7 +89,7 @@ export default function Scene() {
               amount={8}
               radius={10}
               ambient={0.5}
-              intensity={1}
+              intensity={shadow.intensity}
               position={[5, 5, 10]}
               bias={0.001}
             />

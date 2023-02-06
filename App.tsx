@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={theme}>
-      <Leva collapsed hidden />
+      <Leva collapsed={false} hidden={false} />
       <View style={styles.container}>
         <Canvas
           shadows
@@ -48,6 +48,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "black",
   },
 });

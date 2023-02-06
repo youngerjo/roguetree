@@ -58,6 +58,22 @@ export interface BearState {
   weatherChangeTime: number;
   weatherDuration: number;
 
+  environment: {
+    skyColor?: string;
+    groundColor?: string;
+    ambientLight?: {
+      color: string;
+    };
+    directionalLight?: {
+      color: string;
+      position: number[];
+    };
+    shadow?: {
+      color: string;
+      intensity: number;
+    };
+  };
+
   health: number;
   sunlight: number;
   water: number;
@@ -83,6 +99,8 @@ export interface BearState {
   reset: () => void;
 }
 
+const initialWeather: Weather = "partly-sunny";
+
 const initialState = {
   gameState: "title" as GameState,
   gameTime: 0,
@@ -91,10 +109,14 @@ const initialState = {
   exp: 0,
   expProgress: 0,
 
-  weather: "partly-sunny" as Weather,
+  weather: initialWeather,
   weatherElapsedTime: 0,
   weatherChangeTime: 20,
   weatherDuration: 20,
+
+  environment:
+    weatherEffect.items.find((i) => i.name == initialWeather)?.environment ??
+    {},
 
   health: 100,
   sunlight: 5,
@@ -188,6 +210,7 @@ export const useBearStore = create<BearState>()((set) => ({
         weatherElapsedTime,
         weatherChangeTime,
         weatherDuration,
+        environment,
         health,
         sunlight,
         water,
@@ -232,6 +255,7 @@ export const useBearStore = create<BearState>()((set) => ({
           weather: newWeather,
           weatherElapsedTime: newWeatherElapsedTime,
           weatherChangeTime: newWeatherChangeTime,
+          environment: weatherItem.environment,
           health: clampPercent(newHealth),
           sunlight: clampPercent(newSunlight),
           water: clampPercent(newWater),
@@ -247,19 +271,19 @@ export const useBearStore = create<BearState>()((set) => ({
       if (sunlight > 90) {
         newHealth -= deltaTime * (4 - stats.heatResistance * 0.02);
       } else if (sunlight > 80) {
-        newHealth -= deltaTime * (2 - stats.heatResistance * 0.01);
+        newHealth -= deltaTime * (2 - stats.heatResistance * 0.02);
       }
 
       if (water < 1) {
-        newHealth -= deltaTime * (4 - stats.heatResistance * 0.01);
+        newHealth -= deltaTime * (4 - stats.heatResistance * 0.02);
       } else if (water < 10) {
-        newHealth -= deltaTime * (2 - stats.heatResistance * 0.01);
+        newHealth -= deltaTime * (2 - stats.heatResistance * 0.02);
       } else if (water > 90) {
         newHealth -= deltaTime * (1 - stats.floodingResistance * 0.01);
       }
 
       if (weather == "stormy") {
-        newHealth -= deltaTime * (4 - stats.windResistance * 0.02);
+        newHealth -= deltaTime * (4 - stats.windResistance * 0.04);
       }
 
       const waterAbsorbed =

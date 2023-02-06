@@ -3,9 +3,25 @@
     {
       "name": "sunny",
       "modifiers": {
+        "health": -0.5,
         "sunlight": 2,
         "water": -0.2,
         "nutrition": 1
+      },
+      "environment": {
+        "skyColor": "#b7ffff",
+        "groundColor": "#7dff76",
+        "ambientLight": {
+          "color": "#c0c0c0"
+        },
+        "directionalLight": {
+          "color": "#f0f0ff",
+          "position": [0.5, 2, 0.5]
+        },
+        "shadow": {
+          "color": "#000000",
+          "intensity": 4
+        }
       }
     },
     {
@@ -14,6 +30,21 @@
         "sunlight": 1,
         "water": 0,
         "nutrition": 0.5
+      },
+      "environment": {
+        "skyColor": "#e2fafa",
+        "groundColor": "#7dff76",
+        "ambientLight": {
+          "color": "#c0c0c0"
+        },
+        "directionalLight": {
+          "color": "#f0f0ff",
+          "position": [1, 1, 2]
+        },
+        "shadow": {
+          "color": "#000000",
+          "intensity": 2
+        }
       }
     },
     {
@@ -22,6 +53,21 @@
         "sunlight": 0.5,
         "water": 0.2,
         "nutrition": 0
+      },
+      "environment": {
+        "skyColor": "#d8efec",
+        "groundColor": "#bfe897",
+        "ambientLight": {
+          "color": "#c0c0c0"
+        },
+        "directionalLight": {
+          "color": "#e0e0f0",
+          "position": [1, 1, 2]
+        },
+        "shadow": {
+          "color": "#000000",
+          "intensity": 1
+        }
       }
     },
     {
@@ -31,26 +77,70 @@
         "sunlight": -1,
         "water": 2,
         "nutrition": -0.2
+      },
+      "environment": {
+        "skyColor": "#aab4b2",
+        "groundColor": "#6c7662",
+        "ambientLight": {
+          "color": "#a0a0a0"
+        },
+        "directionalLight": {
+          "color": "#404040",
+          "position": [1, 2, 1]
+        },
+        "shadow": {
+          "color": "#000000",
+          "intensity": 0.5
+        }
       }
     },
     {
       "name": "stormy",
       "modifiers": {
-        "health": -3,
+        "health": -2,
         "sunlight": -1,
         "water": 3,
         "nutrition": -1
+      },
+      "environment": {
+        "skyColor": "#2e2e2b",
+        "groundColor": "#333432",
+        "ambientLight": {
+          "color": "#c0c0c0"
+        },
+        "directionalLight": {
+          "color": "",
+          "position": []
+        },
+        "shadow": {
+          "color": "",
+          "intensity": 1
+        }
       }
     },
     {
       "name": "snowy",
       "modifiers": {
-        "health": -5,
+        "health": -3,
         "sunlight": -0.5,
         "water": 0.5,
         "nutrition": 0.5
+      },
+      "environment": {
+        "skyColor": "#dedddd",
+        "groundColor": "#bfc1bd",
+        "ambientLight": {
+          "color": "#c0c0c0"
+        },
+        "directionalLight": {
+          "color": "",
+          "position": []
+        },
+        "shadow": {
+          "color": "",
+          "intensity": 1
+        }
       }
     }
-
   ]
 }
