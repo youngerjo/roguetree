@@ -1,8 +1,8 @@
-import { Button, Flex, Heading, VStack } from "native-base";
-import { useBearStore } from "../utils/store";
+import { Button, Flex, Heading, VStack } from 'native-base'
+import { useBearStore } from '../utils/store'
 
 export default function TitleUI() {
-  const play = useBearStore((state) => state.play);
+  const play = useBearStore((state) => state.play)
 
   return (
     <Flex
@@ -27,5 +27,5 @@ export default function TitleUI() {
         </VStack>
       </VStack>
     </Flex>
-  );
+  )
 }

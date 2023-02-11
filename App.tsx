@@ -1,17 +1,17 @@
-import { StyleSheet, View } from "react-native"
-import { Canvas } from "@react-three/fiber"
-import { NativeBaseProvider, extendTheme } from "native-base"
-import { Leva } from "leva"
-import Scene from "./components/Scene"
-import TitleUI from "./components/TitleUI"
-import GameUI from "./components/GameUI"
-import GameOverUI from "./components/GameOverUI"
-import { useBearStore } from "./utils/store"
+import { StyleSheet, View } from 'react-native'
+import { Canvas } from '@react-three/fiber'
+import { NativeBaseProvider, extendTheme } from 'native-base'
+import { Leva } from 'leva'
+import Scene from './components/Scene'
+import TitleUI from './components/TitleUI'
+import GameUI from './components/GameUI'
+import GameOverUI from './components/GameOverUI'
+import { useBearStore } from './utils/store'
 
 export default function App() {
   const theme = extendTheme({
     config: {
-      initialColorMode: "dark",
+      initialColorMode: 'dark',
     },
   })
 
@@ -29,11 +29,11 @@ export default function App() {
         >
           <Scene />
         </Canvas>
-        {gameState == "title" ? (
+        {gameState == 'title' ? (
           <TitleUI />
-        ) : gameState == "playing" ? (
+        ) : gameState == 'playing' ? (
           <GameUI />
-        ) : gameState == "gameover" ? (
+        ) : gameState == 'gameover' ? (
           <GameOverUI />
         ) : null}
       </View>

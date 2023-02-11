@@ -1,58 +1,58 @@
-import { useMemo } from "react";
-import * as THREE from "three";
-import { Flex, HStack, Progress, VStack, Text } from "native-base";
-import UpgradeCard from "./UpgradeCard";
-import WeatherIndicator from "./WeatherIndicator";
-import { pickUpgrades } from "../utils/upgrade-picker";
-import { useBearStore } from "../utils/store";
+import { useMemo } from 'react'
+import * as THREE from 'three'
+import { Flex, HStack, Progress, VStack, Text } from 'native-base'
+import UpgradeCard from './UpgradeCard'
+import WeatherIndicator from './WeatherIndicator'
+import { pickUpgrades } from '../utils/upgrade-picker'
+import { useBearStore } from '../utils/store'
 
 const tags = {
   trunk: {
-    text: "Trunk",
-    color: "amber",
+    text: 'Trunk',
+    color: 'amber',
   },
   branch: {
-    text: "Branch",
-    color: "tertiary",
+    text: 'Branch',
+    color: 'tertiary',
   },
   root: {
-    text: "Root",
-    color: "pink",
+    text: 'Root',
+    color: 'pink',
   },
-};
+}
 
 export default function GameUI() {
-  const health = useBearStore((state) => state.health);
-  const weather = useBearStore((state) => state.weather);
-  const sunlight = useBearStore((state) => state.sunlight);
-  const water = useBearStore((state) => state.water);
-  const nutrition = useBearStore((state) => state.nutrition);
-  const level = useBearStore((state) => state.level);
-  const expProgress = useBearStore((state) => state.expProgress);
-  const collectedUpgrades = useBearStore((state) => state.upgrades);
-  const doUpgrade = useBearStore((state) => state.doUpgrade);
-  const numPendingUpgrades = useBearStore((state) => state.numPendingUpgrades);
+  const health = useBearStore((state) => state.health)
+  const weather = useBearStore((state) => state.weather)
+  const sunlight = useBearStore((state) => state.sunlight)
+  const water = useBearStore((state) => state.water)
+  const nutrition = useBearStore((state) => state.nutrition)
+  const level = useBearStore((state) => state.level)
+  const expProgress = useBearStore((state) => state.expProgress)
+  const collectedUpgrades = useBearStore((state) => state.upgrades)
+  const doUpgrade = useBearStore((state) => state.doUpgrade)
+  const numPendingUpgrades = useBearStore((state) => state.numPendingUpgrades)
 
   const randomUpgrades = useMemo(() => {
     if (numPendingUpgrades > 0) {
-      return pickUpgrades(3);
+      return pickUpgrades(3)
     } else {
-      return [];
+      return []
     }
-  }, [numPendingUpgrades]);
+  }, [numPendingUpgrades])
 
   const availableUpgrades = randomUpgrades.map((item) => ({
     name: item.name,
     title: item.title,
     description: item.description,
     tag: item.type ? tags[item.type].text : null,
-    tagColor: item.type ? tags[item.type].color : "gray",
+    tagColor: item.type ? tags[item.type].color : 'gray',
     level: collectedUpgrades[item.name] ? collectedUpgrades[item.name] + 1 : 1,
-  }));
+  }))
 
   const onUpgradePress = (name: string) => {
-    doUpgrade(name);
-  };
+    doUpgrade(name)
+  }
 
   return (
     <Flex
@@ -64,12 +64,7 @@ export default function GameUI() {
       flexDir="column"
       justifyContent="space-between"
     >
-      <Flex
-        p={4}
-        flexDir="row"
-        justifyContent="space-between"
-        pointerEvents="box-none"
-      >
+      <Flex p={4} flexDir="row" justifyContent="space-between" pointerEvents="box-none">
         <VStack w="33.333%">
           <HStack alignItems="center">
             <Text w="6rem" fontWeight="bold">
@@ -107,11 +102,7 @@ export default function GameUI() {
           {availableUpgrades.length > 0 && (
             <HStack space={4} justifyContent="center" pointerEvents="auto">
               {availableUpgrades.map((upgrade, index) => (
-                <UpgradeCard
-                  key={index}
-                  {...upgrade}
-                  onPress={() => onUpgradePress(upgrade.name)}
-                />
+                <UpgradeCard key={index} {...upgrade} onPress={() => onUpgradePress(upgrade.name)} />
               ))}
             </HStack>
           )}
@@ -122,5 +113,5 @@ export default function GameUI() {
         </VStack>
       </Flex>
     </Flex>
-  );
+  )
 }

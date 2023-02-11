@@ -1,10 +1,10 @@
-import { Button, Flex, Heading, VStack, Text, HStack } from "native-base";
-import { useBearStore } from "../utils/store";
+import { Button, Flex, Heading, VStack, Text, HStack } from 'native-base'
+import { useBearStore } from '../utils/store'
 
 export default function GameOverUI() {
-  const reset = useBearStore((state) => state.reset);
-  const gameTime = useBearStore((state) => state.gameTime);
-  const score = Math.floor(gameTime) * 100;
+  const reset = useBearStore((state) => state.reset)
+  const gameTime = useBearStore((state) => state.gameTime)
+  const score = Math.floor(gameTime) * 100
 
   return (
     <Flex
@@ -37,5 +37,5 @@ export default function GameOverUI() {
         </VStack>
       </VStack>
     </Flex>
-  );
+  )
 }

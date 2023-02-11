@@ -1,11 +1,11 @@
-import { useControls } from "leva";
-import { useBearStore } from "../utils/store";
+import { useControls } from 'leva'
+import { useBearStore } from '../utils/store'
 
 export default function Ground() {
-  const environment = useBearStore((state) => state.environment);
-  const groundColor = environment.groundColor ?? "#bfe897";
-  const undergroundCeilingColor = "#796651";
-  const undergroundWallColor = "#58472a";
+  const environment = useBearStore((state) => state.environment)
+  const groundColor = environment.groundColor ?? '#bfe897'
+  const undergroundCeilingColor = '#796651'
+  const undergroundWallColor = '#58472a'
 
   // const { groundColor, undergroundCeilingColor, undergroundWallColor } =
   //   useControls("Ground", {
@@ -43,5 +43,5 @@ export default function Ground() {
         </mesh>
       </group>
     </group>
-  );
+  )
 }

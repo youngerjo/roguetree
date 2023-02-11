@@ -1,16 +1,16 @@
-import { Box, Pressable, HStack, Text, Badge, Spacer } from "native-base";
+import { Box, Pressable, HStack, Text, Badge, Spacer } from 'native-base'
 
 export interface UpgradeCardProps {
-  title: string;
-  description?: string;
-  tag?: string;
-  tagColor?: string;
-  level?: number;
-  onPress?: () => void;
+  title: string
+  description?: string
+  tag?: string
+  tagColor?: string
+  level?: number
+  onPress?: () => void
 }
 
 export default function UpgradeCard(props: UpgradeCardProps) {
-  const { title, description, tag, tagColor, level, onPress } = props;
+  const { title, description, tag, tagColor, level, onPress } = props
 
   return (
     <Box alignItems="center">
@@ -38,7 +38,7 @@ export default function UpgradeCard(props: UpgradeCardProps) {
                   <Badge
                     colorScheme={tagColor}
                     _text={{
-                      color: "white",
+                      color: 'white',
                     }}
                     variant="solid"
                     rounded="4"
@@ -53,21 +53,16 @@ export default function UpgradeCard(props: UpgradeCardProps) {
                   </Text>
                 )}
               </HStack>
-              <Text
-                color="coolGray.50"
-                mt="3"
-                fontWeight="medium"
-                fontSize="xl"
-              >
+              <Text color="coolGray.50" mt="3" fontWeight="medium" fontSize="xl">
                 {title}
               </Text>
               <Text h="120" mt="2" fontSize="sm" color="coolGray.200">
                 {description}
               </Text>
             </Box>
-          );
+          )
         }}
       </Pressable>
     </Box>
-  );
+  )
 }
